@@ -1,0 +1,17 @@
+﻿@model MVCApplication.ViewModels.ResultViewModel
+
+@{
+    ViewData["Title"] = "Result";
+}
+
+<h2>Result</h2>
+
+@foreach(var element in Model.RandomKeys)
+
+{
+    <p>@Html.DisplayFor(m => element)</p>
+
+
+}
+
+
