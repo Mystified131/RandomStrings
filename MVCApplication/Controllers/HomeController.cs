@@ -28,6 +28,8 @@ namespace MVCApplication.Controllers
         {
             ResultViewModel resultViewModel = new ResultViewModel();
 
+            ViewBag.error = "Please return to the 'Home' page to provide values to use for a result.";
+
             return View(resultViewModel);
         }
 
@@ -37,6 +39,19 @@ namespace MVCApplication.Controllers
         {
             if (ModelState.IsValid)
             {
+                if(resultViewModel.quant == 0)
+                {
+                    Random random = new Random();
+                    resultViewModel.quant = random.Next(0, 100);
+
+                }
+
+                if(resultViewModel.leng == 0)
+                {
+                    Random random = new Random();
+                    resultViewModel.leng = random.Next(1, 20);
+
+                }
 
                 RandomValue qbert = new RandomValue("qbert");
 

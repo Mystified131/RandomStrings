@@ -6,6 +6,10 @@
 
 <h2>Result</h2>
 
+@if(Model.quant > 0) { 
+
+<h4>For @Model.quant  strings of @Model.leng  characters in length:</h4>
+
 @foreach(var element in Model.RandomKeys)
 
 {
@@ -14,4 +18,9 @@
 
 }
 
+}
+
+<br />
+
+@ViewBag.error
 
